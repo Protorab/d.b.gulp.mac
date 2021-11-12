@@ -1,0 +1,36 @@
+#modal__form.modal
+  .modal__body
+    
+    form.modal__form.modal__content(action="#")
+      a.modal__close.close__modal(href="#",role="button") 
+        span
+        span
+      fieldset.modal__form-content
+        legend.modal__form-title Заголовок формы      
+        input.modal__form-input(
+          required,
+          placeholder="Введите имя",
+          type="text",
+          name="name",
+          title="Введите Ваше имя"
+          )
+        input.modal__form-input(
+          required,
+          placeholder="Введите номер телефона",
+          type="tel",
+          name="phone"
+          title="Введите Ваш номер телефона в формате - (**) ***-**-**",
+          )
+        input.modal__form-input(
+          required,
+          placeholder="Введите e-mail",
+          type="email",
+          name="email",
+          title="Введите Ваш E-mail")
+        textarea.modal__form-textarea(
+          name="Сообщение",
+          cols="30",
+          rows="10",
+          placeholder="Введите текст",
+          title="Введите Ваше сообщение")
+        button.btn(type='submit').btn.modal__btn Отправить 

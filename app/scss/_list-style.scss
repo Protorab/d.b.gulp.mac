@@ -1,0 +1,87 @@
+ul,
+ol {
+  list-style: none;
+}
+
+ul {
+  &:not([class]),
+  &[class^="list__type"] {
+    list-style: none !important;
+    @include adaptive(margin-bottom, 15, 5, 0);
+
+    li {
+      position: relative;
+      @include adaptive(margin-bottom, 5, 5, 0);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        position: relative;
+        top: -3px;
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background: $textColor;
+        @include adaptive(margin-right, 5, 5, 0);
+        @include _borderRadius(50%);
+      }
+      ul {
+        @include adaptive(margin-left, 15, 10, 0);
+        @include adaptive(margin-top, 15, 5, 0);
+      }
+    }
+  }
+
+  &.list__type {
+    &-disc {
+      li {
+        &::before {
+          background: $textColor;
+        }
+      }
+    }
+
+    &-square {
+      li {
+        &::before {
+          @include _borderRadius(0%);
+        }
+      }
+    }
+
+    &-circle {
+      li {
+        &::before {
+          border: 1px solid $textColor;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+ol {
+  &:not([class]) {
+    @include adaptive(margin-bottom, 15, 5, 0);
+
+    li {
+      @include adaptive(margin-bottom, 10, 5, 0);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      ol {
+        @include adaptive(margin-left, 15, 10, 0);
+        @include adaptive(margin-top, 15, 5, 0);
+      }
+    }
+
+    .item-number {
+      font-weight: 700;
+      @include adaptive(margin-right, 10, 5, 0);
+    }
+  }
+}

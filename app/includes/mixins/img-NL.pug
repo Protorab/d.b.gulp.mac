@@ -1,0 +1,10 @@
+mixin img(imgPath,title,addClass,showModal)
+  img.img_full.img_center(
+    itemscope,
+    itemtype='http://schema.org/ImageObject',
+    src!=`${imgPath}`, 
+    alt!=`${title}`,
+    title!=`${title}`,
+    draggable="false",
+    loading="lazy",
+    class!=`${addClass ? `${addClass}` : ""} ${showModal ? showModal : ""} `)

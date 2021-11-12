@@ -1,0 +1,65 @@
+.preloader {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: $mainColor;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  @include _transition(all, 0.478s);
+
+  // .preloader__logo
+  &__logo {
+    animation-name: showInUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    @include adaptive(width, 200, 150, 0);
+    @include adaptive(margin-bottom, 35, 25, 0);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // .preloader__progress
+  &__progress {
+    height: 5px;
+    animation-name: showInDown;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    @include _transition(all, 0.478s);
+    @include adaptive(width, 250, 200, 0);
+    @include _borderRadius(50%);
+
+    &[value] {
+      &::-webkit-progress-bar {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+        background-color: #eee;
+        @include _transition(all, 0.478s);
+      }
+
+      &::-webkit-progress-value {
+        @include _transition(all, 0.478s);
+        background: $accentColor;
+        transition-delay: 0.5s;
+      }
+    }
+  }
+  .__loading & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}

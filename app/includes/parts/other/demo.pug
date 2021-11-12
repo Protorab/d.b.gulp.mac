@@ -1,0 +1,79 @@
+.wrapper
+  h1 Row and coll example + modal images
+  .row
+    .coll 
+      include ./../../mixins/img
+      +img('./img/img_1.jpg',"image-01","show-modal")
+    .coll 
+      +img('./img/img_2.jpg',"image-01","show-modal")
+    .coll 
+      +img('./img/img_3.png',"image-01","show-modal")
+  br
+  h1 Background image example 
+  .bg-image
+  br
+  article.article
+    h1 Article title - h1
+    h2 Article title - h2
+    h3 Article title - h3
+    h4 Article title - h4
+    h5 Article title - h5
+    h6 Article title - h6
+    br
+    h2 Article paragraph
+    p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio deleniti laboriosam minus mollitia. Deserunt quasi pariatur voluptatum sit adipisci maiores, dolorem dolores magnam, distinctio incidunt alias iure dicta velit minus?
+      br
+      a(href="#") some link
+    br
+    h2 Article two side text
+    table 
+      tr 
+        td 
+          p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio deleniti laboriosam minus mollitia. Deserunt quasi pariatur voluptatum sit adipisci maiores, dolorem dolores magnam, distinctio incidunt alias iure dicta velit minus?
+        td 
+          p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio deleniti laboriosam minus mollitia. Deserunt quasi pariatur voluptatum sit adipisci maiores, dolorem dolores magnam, distinctio incidunt alias iure dicta velit minus?
+    br
+    table 
+      tr
+        th
+          h2 Article marker list
+        th
+          h2 Article number list
+      tr 
+        td
+          ul
+            li List item - 1
+              ul
+                li Sublist item - 1.1
+                li Sublist item - 1.2
+                li Sublist item - 1.3   
+            li List item - 2
+            li List item - 3
+              ul
+                li Sublist item - 3.1
+                li Sublist item - 3.2
+                li Sublist item - 3.3
+            li List item - 4
+            li List item - 5
+        td
+          ol
+            li List item
+              ol
+                li Sublist item  
+                li Sublist item  
+                li Sublist item  
+            li List item
+            li List item
+              ol
+                li Sublist item  
+                li Sublist item  
+                li Sublist item 
+            li List item
+            li List item
+          ol
+            li List item
+            li List item
+            li List item
+            li List item
+            li List item
+            

@@ -1,0 +1,41 @@
+doctype html
+html(lang="ru")
+
+  //head start
+  include ./includes/mixins/head
+  +head(
+    "Главная",
+    "standard default pack for website development",
+    "website,development",
+    "./img/img_1.jpg",
+    "http://localhost:3000/",
+    "default.pack",
+    [
+      ["https://analytics.google.com/"],
+      ["https://schema.org/"],
+      ["https://metrika.yandex.ru/"],
+      ["https://connect.facebook.net"]
+    ])
+  //head end
+
+  body.__fixed.__loading
+    //preloader start
+    include ./includes/parts/other/preloader
+    //preloader end
+    
+    //header start
+    include ./includes/parts/main/header
+    //header end
+
+    //page-main start
+    main.main.page-main 
+      include ./includes/parts/other/demo
+    //page-main end
+    
+    //footer start
+    include ./includes/parts/main/footer
+    //footer end
+
+    include ./includes/parts/other/modal__form.pug
+    include ./includes/parts/other/modal__img.pug
+    include ./includes/parts/other/scripts.pug
